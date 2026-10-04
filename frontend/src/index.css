@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Atkinson Hyperlegible", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --color-paper: #f3f6fa;
+  --color-ink: #16233b;
+  --color-muted: #55627a;
+  --color-line: #d9e1ec;
+  --color-brand: #2f5bea;
+  --color-brand-dark: #2447c0;
+  --color-brand-soft: #e6ecff;
+  --color-good: #12805c;
+  --color-good-soft: #dcf5ec;
+  --color-bad: #b42318;
+  --color-bad-soft: #fde8e6;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+/* Ruled-notebook look for the notes box. Line height must match the gradient size (28px). */
+.ruled {
+  line-height: 28px;
+  background-color: #fffdf6;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 27px,
+    #dfe6f1 27px,
+    #dfe6f1 28px
+  );
+  background-attachment: local;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
